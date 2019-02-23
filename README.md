@@ -8,7 +8,7 @@ In addition to the reference C++ implementation, an assembly language implementa
 
 Here are some highlights of the SFP system presented here:
 
-* Super-wide dynamic range (1039)
+* Super-wide dynamic range (10<sup>39</sup>)
 * 2.4 digit precision
 * Fully shift-based multiply and divide
 * Table-based logarithm and exponentiation functions
