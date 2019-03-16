@@ -2538,6 +2538,7 @@ void sfp_exercise_add(double f, double f2)
   getchar();
  }
 }
+
 void sfp_exercise_sub(double f, double f2)
 {
 
@@ -2610,7 +2611,22 @@ void sfp_exercise_log(double f)
   puts("\nEXCEPTION!!! EXCEPTION!!! EXCEPTION!!! EXCEPTION!!! \n");
   getchar();
  }
+}
 
+void sfp_exercise_convert(byte m, char e)
+{
+ printf("CONVERTING m=%d, e=%d\n",m,e);
+ double f=::sfp_to_ieee(m,e);
+
+ byte m2;
+
+ char e2;
+ ::sfp_from_ieee(f,&m2,&e2);
+ if(m!=m2 || e!=e2)
+ {
+  puts("\nEXCEPTION!!! EXCEPTION!!! EXCEPTION!!! EXCEPTION!!! \n");
+  getchar();
+ }
 }
 
 void sfp_exercise_neg_pow(double f)
@@ -2707,10 +2723,32 @@ int main(int argc, char* argv[])
  byte ucand_m=0;
 
 /****************************************************************************************
-Test Logarithms
+Test Conversions
 ****************************************************************************************/
 
  char ucand_e=127;
+
+ do
+ {
+
+  ucand_m=0; 
+  do
+  { 
+   ::sfp_exercise_convert(ucand_m,ucand_e);
+
+   if(++ucand_m==0) break; 
+
+  }while(true);
+
+  if(++ucand_e==127) break;
+
+ }while(true);
+
+/****************************************************************************************
+Test Logarithms
+****************************************************************************************/
+
+ ucand_e=127;
 
  do
  {
