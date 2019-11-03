@@ -2,7 +2,7 @@
 
 SFP is a 16-bit floating point type and associated library. It is "symmetrical" in that it uses 8 bits for the mantissa and 8 bits for the exponent. 
 
-This has the advantage of simplifying the implementation of the library code on 8-bit devices. To that same end, the provided C++ code is (outside of unit tests) written using a branch-based, 8-bit subset of the C++ language which is designed to be hand-assembled for even the most primitive of devices, with relative ease.
+This has the advantage of simplifying the implementation of the library code on 8-bit devices. To that same end, the provided C++ code is written (outside of unit tests) using a branch-based, 8-bit subset of the C++ language which is designed to be hand-assembled for even the most primitive of devices, with relative ease.
 
 In addition to the reference C++ implementation, an assembly language implementation written in Microchip Technology "PIC" assembly language is provided. This targets the 8-bit "mid range" device families, whose names typically start with "16" or "18."
 
